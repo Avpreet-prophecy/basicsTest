@@ -1,0 +1,60 @@
+{
+  "id" : "p1",
+  "metainfo" : {
+    "label" : "p1",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "schedule" : {
+      "cron" : "* 0 2 * * * *",
+      "timeZone" : "GMT",
+      "emailOnSuccess" : false,
+      "emailOnFailure" : false,
+      "emailOnStart" : false,
+      "emails" : [ "email@gmail.com" ],
+      "enabled" : false
+    },
+    "sensorSchedule" : {
+      "enabled" : false,
+      "isDefaultView" : false,
+      "triggers" : { }
+    },
+    "isTranspiledPipeline" : false
+  },
+  "processes" : {
+    "XexBVfk7eAGLg4r0GBkpM$$wKYQCLt3FJEy846cDiLVg" : {
+      "id" : "XexBVfk7eAGLg4r0GBkpM$$wKYQCLt3FJEy846cDiLVg",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "p1__fill_null_id",
+        "phase" : 0
+      },
+      "properties" : {
+        "modelName" : "p1__fill_null_id"
+      },
+      "visualMetaInfo" : {
+        "visualProcessIds" : [ "fill_null_id_YfcinepgvFgvNSEJp6Uis$$ejzQa3aRAse7mwa93nvWg", "XexBVfk7eAGLg4r0GBkpM$$wKYQCLt3FJEy846cDiLVg", "1IOjpPz_9JnXnXX0UP_uL$$-H9FlUsyvaQxERV1_jmkp" ],
+        "type" : "ephemeral",
+        "isTemporaryTable" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "p1__fill_null_id_in_0",
+          "slug" : "in_0"
+        } ],
+        "outputs" : [ {
+          "id" : "p1__fill_null_id_out_0",
+          "slug" : "out_0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ ],
+  "component" : "Pipeline"
+}

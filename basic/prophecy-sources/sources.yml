@@ -1,0 +1,19 @@
+---
+version: 2
+sources:
+- name: "qa_team.av"
+  database: "qa-team"
+  schema: "av"
+  tables:
+  - name: "people_10_k_records"
+    columns:
+    - name: "id"
+      dataType:
+        type: "Bigint"
+    - name: "first_name"
+      dataType:
+        type: "String"
+    - name: "last_name"
+      dataType:
+        type: "String"
+    type: "table"

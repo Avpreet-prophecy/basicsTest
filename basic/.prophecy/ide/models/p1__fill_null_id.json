@@ -1,0 +1,198 @@
+{
+  "id" : "p1__fill_null_id",
+  "metainfo" : {
+    "label" : "p1__fill_null_id",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "materialized" : "ephemeral",
+        "database" : "\"qa_team\"",
+        "schema" : "\"qa_orchestration\"",
+        "type" : "ModelConfig"
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "fill_null_id_YfcinepgvFgvNSEJp6Uis$$ejzQa3aRAse7mwa93nvWg" : {
+      "id" : "fill_null_id_YfcinepgvFgvNSEJp6Uis$$ejzQa3aRAse7mwa93nvWg",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "fill_null_id"
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "\nSELECT *\n\nFROM fill_null_id\n\n",
+        "isModel" : true,
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_0",
+          "slug" : "input_port_0"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_0",
+          "slug" : "output_port_0"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "XexBVfk7eAGLg4r0GBkpM$$wKYQCLt3FJEy846cDiLVg" : {
+      "id" : "XexBVfk7eAGLg4r0GBkpM$$wKYQCLt3FJEy846cDiLVg",
+      "component" : "DataCleansing",
+      "metadata" : {
+        "label" : "fill_null_id",
+        "x" : -640,
+        "y" : -340,
+        "phase" : 0
+      },
+      "properties" : {
+        "trimWhiteSpace" : false,
+        "replaceNullForNumericFields" : false,
+        "cleanLetters" : false,
+        "replaceNullTextWith" : "qwe",
+        "removeRowNullAllCols" : false,
+        "replaceNullTextFields" : true,
+        "relation_name" : [ "people_10_k_records" ],
+        "replaceNullDateWith" : "1970-01-01",
+        "columnNames" : [ "id" ],
+        "replaceNullTimeFields" : false,
+        "_oldMacroProperties" : {
+          "macroName" : "DataCleansing",
+          "projectName" : "prophecy_basics",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['people_10_k_records']"
+          }, {
+            "name" : "schema",
+            "value" : "[{\"name\": \"id\", \"dataType\": \"Bigint\"}, {\"name\": \"first_name\", \"dataType\": \"String\"}, {\"name\": \"last_name\", \"dataType\": \"String\"}]"
+          }, {
+            "name" : "modifyCase",
+            "value" : "Keep original"
+          }, {
+            "name" : "columnNames",
+            "value" : "[\"id\"]"
+          }, {
+            "name" : "replaceNullTextFields",
+            "value" : "true"
+          }, {
+            "name" : "replaceNullTextWith",
+            "value" : "qwe"
+          }, {
+            "name" : "replaceNullForNumericFields",
+            "value" : "false"
+          }, {
+            "name" : "replaceNullNumericWith",
+            "value" : "0"
+          }, {
+            "name" : "trimWhiteSpace",
+            "value" : "false"
+          }, {
+            "name" : "removeTabsLineBreaksAndDuplicateWhitespace",
+            "value" : "false"
+          }, {
+            "name" : "allWhiteSpace",
+            "value" : "false"
+          }, {
+            "name" : "cleanLetters",
+            "value" : "false"
+          }, {
+            "name" : "cleanPunctuations",
+            "value" : "false"
+          }, {
+            "name" : "cleanNumbers",
+            "value" : "false"
+          }, {
+            "name" : "removeRowNullAllCols",
+            "value" : "false"
+          }, {
+            "name" : "replaceNullDateFields",
+            "value" : "false"
+          }, {
+            "name" : "replaceNullDateWith",
+            "value" : "1970-01-01"
+          }, {
+            "name" : "replaceNullTimeFields",
+            "value" : "false"
+          }, {
+            "name" : "replaceNullTimeWith",
+            "value" : "1970-01-01 00:00:00.0"
+          } ]
+        },
+        "replaceNullTimeWith" : "1970-01-01 00:00:00.0",
+        "schema" : "[{\"name\": \"id\", \"dataType\": \"Bigint\"}, {\"name\": \"first_name\", \"dataType\": \"String\"}, {\"name\": \"last_name\", \"dataType\": \"String\"}]",
+        "allWhiteSpace" : false,
+        "removeTabsLineBreaksAndDuplicateWhitespace" : false,
+        "modifyCase" : "Keep original",
+        "cleanPunctuations" : false,
+        "replaceNullDateFields" : false,
+        "cleanNumbers" : false,
+        "replaceNullNumericWith" : 0
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "n0UUlzlZ9k9f5mVAx4d1K$$XDyIW9EjYK4Opva8ccHF8",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "YfcinepgvFgvNSEJp6Uis$$ejzQa3aRAse7mwa93nvWg",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "1IOjpPz_9JnXnXX0UP_uL$$-H9FlUsyvaQxERV1_jmkp" : {
+      "id" : "1IOjpPz_9JnXnXX0UP_uL$$-H9FlUsyvaQxERV1_jmkp",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "people_10_k_records",
+        "x" : -840,
+        "y" : -420,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "people_10_k_records",
+          "sourceType" : "Table",
+          "sourceName" : "qa_team.av",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "XTDQ-1moLh0i-6ou20RaM$$PaGDSE8lkoD2ZfNiKFLCj",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "conn_XexBVfk7eAGLg4r0GBkpM$$wKYQCLt3FJEy846cDiLVg_fill_null_id_YfcinepgvFgvNSEJp6Uis$$ejzQa3aRAse7mwa93nvWg",
+    "source" : "XexBVfk7eAGLg4r0GBkpM$$wKYQCLt3FJEy846cDiLVg",
+    "sourcePort" : "YfcinepgvFgvNSEJp6Uis$$ejzQa3aRAse7mwa93nvWg",
+    "target" : "fill_null_id_YfcinepgvFgvNSEJp6Uis$$ejzQa3aRAse7mwa93nvWg",
+    "targetPort" : "input_port_0"
+  }, {
+    "id" : "UeWSBBomp8XL73GFjZkBQ$$y7FTFXG05-muNs9fHmz-p",
+    "source" : "1IOjpPz_9JnXnXX0UP_uL$$-H9FlUsyvaQxERV1_jmkp",
+    "sourcePort" : "XTDQ-1moLh0i-6ou20RaM$$PaGDSE8lkoD2ZfNiKFLCj",
+    "target" : "XexBVfk7eAGLg4r0GBkpM$$wKYQCLt3FJEy846cDiLVg",
+    "targetPort" : "n0UUlzlZ9k9f5mVAx4d1K$$XDyIW9EjYK4Opva8ccHF8"
+  } ],
+  "component" : "Model"
+}

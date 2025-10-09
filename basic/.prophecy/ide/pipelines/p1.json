@@ -1,0 +1,239 @@
+{
+  "id" : "p1",
+  "metainfo" : {
+    "label" : "p1",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "schedule" : {
+      "cron" : "* 0 2 * * * *",
+      "timeZone" : "GMT",
+      "emailOnSuccess" : false,
+      "emailOnFailure" : false,
+      "emailOnStart" : false,
+      "emails" : [ "email@gmail.com" ],
+      "enabled" : false
+    },
+    "sensorSchedule" : {
+      "enabled" : false,
+      "isDefaultView" : false,
+      "triggers" : { }
+    },
+    "isTranspiledPipeline" : false
+  },
+  "processes" : {
+    "1IOjpPz_9JnXnXX0UP_uL$$-H9FlUsyvaQxERV1_jmkp" : {
+      "id" : "1IOjpPz_9JnXnXX0UP_uL$$-H9FlUsyvaQxERV1_jmkp",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "people_10_k_records",
+        "x" : -840,
+        "y" : -420,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "people_10_k_records",
+          "sourceType" : "Table",
+          "sourceName" : "qa_team.av",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "yq_JuSEZ0035RrJKO9wMu$$PHMSB__I5m5Us2Z526ecX",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "XTDQ-1moLh0i-6ou20RaM$$PaGDSE8lkoD2ZfNiKFLCj",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "databricks",
+            "fields" : [ {
+              "name" : "id",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "first_name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "last_name",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "XexBVfk7eAGLg4r0GBkpM$$wKYQCLt3FJEy846cDiLVg" : {
+      "id" : "XexBVfk7eAGLg4r0GBkpM$$wKYQCLt3FJEy846cDiLVg",
+      "component" : "DataCleansing",
+      "metadata" : {
+        "label" : "fill_null_id",
+        "x" : -640,
+        "y" : -340,
+        "phase" : 0
+      },
+      "properties" : {
+        "trimWhiteSpace" : false,
+        "replaceNullForNumericFields" : false,
+        "cleanLetters" : false,
+        "replaceNullTextWith" : "qwe",
+        "removeRowNullAllCols" : false,
+        "replaceNullTextFields" : true,
+        "relation_name" : [ "people_10_k_records" ],
+        "replaceNullDateWith" : "1970-01-01",
+        "columnNames" : [ "id" ],
+        "replaceNullTimeFields" : false,
+        "_oldMacroProperties" : {
+          "macroName" : "DataCleansing",
+          "projectName" : "prophecy_basics",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['people_10_k_records']"
+          }, {
+            "name" : "schema",
+            "value" : "[{\"name\": \"id\", \"dataType\": \"Bigint\"}, {\"name\": \"first_name\", \"dataType\": \"String\"}, {\"name\": \"last_name\", \"dataType\": \"String\"}]"
+          }, {
+            "name" : "modifyCase",
+            "value" : "Keep original"
+          }, {
+            "name" : "columnNames",
+            "value" : "[\"id\"]"
+          }, {
+            "name" : "replaceNullTextFields",
+            "value" : "true"
+          }, {
+            "name" : "replaceNullTextWith",
+            "value" : "qwe"
+          }, {
+            "name" : "replaceNullForNumericFields",
+            "value" : "false"
+          }, {
+            "name" : "replaceNullNumericWith",
+            "value" : "0"
+          }, {
+            "name" : "trimWhiteSpace",
+            "value" : "false"
+          }, {
+            "name" : "removeTabsLineBreaksAndDuplicateWhitespace",
+            "value" : "false"
+          }, {
+            "name" : "allWhiteSpace",
+            "value" : "false"
+          }, {
+            "name" : "cleanLetters",
+            "value" : "false"
+          }, {
+            "name" : "cleanPunctuations",
+            "value" : "false"
+          }, {
+            "name" : "cleanNumbers",
+            "value" : "false"
+          }, {
+            "name" : "removeRowNullAllCols",
+            "value" : "false"
+          }, {
+            "name" : "replaceNullDateFields",
+            "value" : "false"
+          }, {
+            "name" : "replaceNullDateWith",
+            "value" : "1970-01-01"
+          }, {
+            "name" : "replaceNullTimeFields",
+            "value" : "false"
+          }, {
+            "name" : "replaceNullTimeWith",
+            "value" : "1970-01-01 00:00:00.0"
+          } ]
+        },
+        "replaceNullTimeWith" : "1970-01-01 00:00:00.0",
+        "schema" : "[{\"name\": \"id\", \"dataType\": \"Bigint\"}, {\"name\": \"first_name\", \"dataType\": \"String\"}, {\"name\": \"last_name\", \"dataType\": \"String\"}]",
+        "allWhiteSpace" : false,
+        "removeTabsLineBreaksAndDuplicateWhitespace" : false,
+        "modifyCase" : "Keep original",
+        "cleanPunctuations" : false,
+        "replaceNullDateFields" : false,
+        "cleanNumbers" : false,
+        "replaceNullNumericWith" : 0
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "n0UUlzlZ9k9f5mVAx4d1K$$XDyIW9EjYK4Opva8ccHF8",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "databricks",
+            "fields" : [ {
+              "name" : "id",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "first_name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "last_name",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "YfcinepgvFgvNSEJp6Uis$$ejzQa3aRAse7mwa93nvWg",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "id",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "first_name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "last_name",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "componentInfo" : {
+        "gemId" : "DataCleansing_prophecy_basics",
+        "name" : "DataCleansing",
+        "projectName" : "prophecy_basics",
+        "sourceProjectName" : "prophecy_basics",
+        "sourceProjectVersion" : "0.0.1.dev4"
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "UeWSBBomp8XL73GFjZkBQ$$y7FTFXG05-muNs9fHmz-p",
+    "source" : "1IOjpPz_9JnXnXX0UP_uL$$-H9FlUsyvaQxERV1_jmkp",
+    "sourcePort" : "XTDQ-1moLh0i-6ou20RaM$$PaGDSE8lkoD2ZfNiKFLCj",
+    "target" : "XexBVfk7eAGLg4r0GBkpM$$wKYQCLt3FJEy846cDiLVg",
+    "targetPort" : "n0UUlzlZ9k9f5mVAx4d1K$$XDyIW9EjYK4Opva8ccHF8"
+  } ],
+  "component" : "Pipeline"
+}
