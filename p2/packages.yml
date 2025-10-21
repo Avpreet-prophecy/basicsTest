@@ -1,0 +1,8 @@
+---
+packages:
+- revision: "0.0.12"
+  git: "https://github.com/prophecy-io/databricks-sql-basics"
+  subdirectory: ""
+- revision: "dep_model_whitelisted/0.1.0"
+  git: "https://github.com/Avpreet-prophecy/basicsTest"
+  subdirectory: "p1"

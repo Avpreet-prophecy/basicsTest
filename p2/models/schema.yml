@@ -1,0 +1,18 @@
+---
+version: 2
+models:
+- name: "m1"
+  columns:
+  - name: "Account_Number"
+    dataType:
+      type: "Integer"
+  - name: "Account_Type"
+    dataType:
+      type: "String"
+  - name: "Balance"
+    dataType:
+      type: "Float"
+  - name: "Beneficiaries"
+    dataType:
+      type: "String"
+  tests: []
