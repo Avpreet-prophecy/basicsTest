@@ -1,0 +1,163 @@
+{
+  "id" : "p1",
+  "metainfo" : {
+    "label" : "p1",
+    "autoLayout" : false,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "p1##NeXe1VMD" : {
+      "id" : "p1##NeXe1VMD",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "p1",
+        "x" : 20,
+        "y" : 20,
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "SELECT * \n\nFROM TextToColumns_1\n",
+        "isModel" : true,
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "x70nrrjD",
+          "slug" : "TextToColumns_1"
+        } ],
+        "outputs" : [ {
+          "id" : "x8grHiFp",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "gJynA_Sj2vujVZE2s1GB0" : {
+      "id" : "gJynA_Sj2vujVZE2s1GB0",
+      "component" : "Seed",
+      "metadata" : {
+        "label" : "dep1",
+        "slug" : "dep1",
+        "x" : -580,
+        "y" : -300,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "dep1",
+          "sourceType" : "Seed",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "sNGv8LzBhYG7ORv6QHjbb",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "X099uVrQVPlune_WBVgt-$$TLfzr9RV8u9_qczHwnnoG" : {
+      "id" : "X099uVrQVPlune_WBVgt-$$TLfzr9RV8u9_qczHwnnoG",
+      "component" : "TextToColumns",
+      "metadata" : {
+        "label" : "TextToColumns_1",
+        "slug" : "TextToColumns_1",
+        "x" : -400,
+        "y" : -260,
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "split_strategy" : "splitColumns",
+        "splitColumnPrefix" : "root",
+        "relation_name" : [ "dep1" ],
+        "columnNames" : "Beneficiaries",
+        "noOfColumns" : 3,
+        "_oldMacroProperties" : {
+          "macroName" : "TextToColumns",
+          "projectName" : "DatabricksSqlBasics",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['dep1']"
+          }, {
+            "name" : "columnNames",
+            "value" : "Beneficiaries"
+          }, {
+            "name" : "delimiter",
+            "value" : ";"
+          }, {
+            "name" : "split_strategy",
+            "value" : "splitColumns"
+          }, {
+            "name" : "noOfColumns",
+            "value" : "3"
+          }, {
+            "name" : "leaveExtraCharLastCol",
+            "value" : "Leave extra in last column"
+          }, {
+            "name" : "splitColumnPrefix",
+            "value" : "root"
+          }, {
+            "name" : "splitColumnSuffix",
+            "value" : "generated"
+          }, {
+            "name" : "splitRowsColumnName",
+            "value" : "generated_column"
+          } ]
+        },
+        "splitColumnSuffix" : "generated",
+        "splitRowsColumnName" : "generated_column",
+        "leaveExtraCharLastCol" : "Leave extra in last column",
+        "delimiter" : ";"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Cgc90zYDq4pMcN1-g6Mh1$$QET5PShB8x52wWfvvP2ov",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "qqYAwTJMLP29ktGuhsqWJ$$VzV20-MiTdya-Q4Z_Blhb",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "componentInfo" : {
+        "gemId" : "TextToColumns_DatabricksSqlBasics",
+        "name" : "TextToColumns",
+        "projectName" : "DatabricksSqlBasics",
+        "sourceProjectName" : "DatabricksSqlBasics",
+        "sourceProjectVersion" : "0.0.12"
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "bd32HnfvT5buTT21j8zca$$nsFUdnAOscdyxNtSqb_eq",
+    "source" : "gJynA_Sj2vujVZE2s1GB0",
+    "sourcePort" : "sNGv8LzBhYG7ORv6QHjbb",
+    "target" : "X099uVrQVPlune_WBVgt-$$TLfzr9RV8u9_qczHwnnoG",
+    "targetPort" : "Cgc90zYDq4pMcN1-g6Mh1$$QET5PShB8x52wWfvvP2ov"
+  }, {
+    "id" : "tthwuFvHQZSVp_25src18",
+    "source" : "X099uVrQVPlune_WBVgt-$$TLfzr9RV8u9_qczHwnnoG",
+    "sourcePort" : "qqYAwTJMLP29ktGuhsqWJ$$VzV20-MiTdya-Q4Z_Blhb",
+    "target" : "p1##NeXe1VMD",
+    "targetPort" : "x70nrrjD"
+  } ],
+  "component" : "Model"
+}

@@ -1,0 +1,6 @@
+Account_Number,Account_Type,Balance,Beneficiaries
+123456789,Checking,75000.50,Amina Yusuf; Juan Pérez
+987654321,Savings,12000.00,Chen Wei
+456789123,Checking,3400.50,Yuki Tanaka; Leila Haddad; Ivan Petrov
+789123456,Checking,800.00,NULL
+321654987,Savings,2200.95,Mei Lin; Noah Schmidt

@@ -1,0 +1,89 @@
+{
+  "id" : "dep1pie1",
+  "metainfo" : {
+    "label" : "dep1pie1",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "schedule" : {
+      "cron" : "* 0 2 * * * *",
+      "timeZone" : "GMT",
+      "emailOnSuccess" : false,
+      "emailOnFailure" : false,
+      "emailOnStart" : false,
+      "emails" : [ "email@gmail.com" ],
+      "enabled" : false
+    },
+    "sensorSchedule" : {
+      "enabled" : false,
+      "isDefaultView" : false,
+      "triggers" : { }
+    },
+    "isTranspiledPipeline" : false
+  },
+  "processes" : {
+    "f_fnAXnG1P78TuBbjEMQ6" : {
+      "id" : "f_fnAXnG1P78TuBbjEMQ6",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "dep1",
+        "x" : -640,
+        "y" : -360,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "dep1",
+          "sourceType" : "Seed",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "-Nd7PgWjgC3UYEGD9hpx5",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "If3rlXz88sXRD-f5foGfa",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "Account_Number",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "Account_Type",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Balance",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "Beneficiaries",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ ],
+  "component" : "Pipeline"
+}
