@@ -1,0 +1,156 @@
+{
+  "id" : "pi123__fuzzy_match_accounts",
+  "metainfo" : {
+    "label" : "pi123__fuzzy_match_accounts",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "materialized" : "ephemeral",
+        "database" : "\"qa_team\"",
+        "schema" : "\"qa_orchestration\"",
+        "type" : "ModelConfig"
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "fuzzy_match_accounts_Ey_R96XftQ2pJ-D7UW8tV$$jwt4ji-aXezXvKewEomgx" : {
+      "id" : "fuzzy_match_accounts_Ey_R96XftQ2pJ-D7UW8tV$$jwt4ji-aXezXvKewEomgx",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "fuzzy_match_accounts"
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "\nSELECT *\n\nFROM fuzzy_match_accounts\n\n",
+        "isModel" : true,
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_0",
+          "slug" : "input_port_0"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_0",
+          "slug" : "output_port_0"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "J-IN55xLUhQ6EmEg0a6WP$$rJk0dNkH0iy3KPD9V72n-" : {
+      "id" : "J-IN55xLUhQ6EmEg0a6WP$$rJk0dNkH0iy3KPD9V72n-",
+      "component" : "FuzzyMatch",
+      "metadata" : {
+        "label" : "fuzzy_match_accounts",
+        "x" : -340,
+        "y" : -320,
+        "phase" : 0
+      },
+      "properties" : {
+        "relation_name" : [ "seed2" ],
+        "includeSimilarityScore" : true,
+        "_oldMacroProperties" : {
+          "macroName" : "FuzzyMatch",
+          "projectName" : "DatabricksSqlBasics",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['seed2']"
+          }, {
+            "name" : "mode",
+            "value" : "PURGE"
+          }, {
+            "name" : "sourceIdCol",
+            "value" : ""
+          }, {
+            "name" : "recordIdCol",
+            "value" : "Record_ID"
+          }, {
+            "name" : "matchThresholdPercentage",
+            "value" : "80"
+          }, {
+            "name" : "includeSimilarityScore",
+            "value" : "true"
+          } ]
+        },
+        "matchFields" : [ {
+          "kind" : "AddMatchField",
+          "AddMatchField" : {
+            "columnName" : "Name",
+            "matchFunction" : "custom"
+          }
+        } ],
+        "sourceIdCol" : "",
+        "matchThresholdPercentage" : 80,
+        "activeTab" : "match_fields",
+        "recordIdCol" : "Record_ID",
+        "mode" : "PURGE"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "lI5XTEru_GBFBcbSU88b1$$bh9ZdPa-P0eL1DVMH3Hcy",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "Ey_R96XftQ2pJ-D7UW8tV$$jwt4ji-aXezXvKewEomgx",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "Rnf6Y6OSrYSkGG8zrrY-J" : {
+      "id" : "Rnf6Y6OSrYSkGG8zrrY-J",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "seed2",
+        "x" : -580,
+        "y" : -320,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "seed2",
+          "sourceType" : "Seed",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "13KWTl02NVtXNZW57_hm3",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "conn_J-IN55xLUhQ6EmEg0a6WP$$rJk0dNkH0iy3KPD9V72n-_fuzzy_match_accounts_Ey_R96XftQ2pJ-D7UW8tV$$jwt4ji-aXezXvKewEomgx",
+    "source" : "J-IN55xLUhQ6EmEg0a6WP$$rJk0dNkH0iy3KPD9V72n-",
+    "sourcePort" : "Ey_R96XftQ2pJ-D7UW8tV$$jwt4ji-aXezXvKewEomgx",
+    "target" : "fuzzy_match_accounts_Ey_R96XftQ2pJ-D7UW8tV$$jwt4ji-aXezXvKewEomgx",
+    "targetPort" : "input_port_0"
+  }, {
+    "id" : "WdrlAQqYYM4weAm4z24iQ$$ttSUHAbJ1ZcqHK04s_g2S",
+    "source" : "Rnf6Y6OSrYSkGG8zrrY-J",
+    "sourcePort" : "13KWTl02NVtXNZW57_hm3",
+    "target" : "J-IN55xLUhQ6EmEg0a6WP$$rJk0dNkH0iy3KPD9V72n-",
+    "targetPort" : "lI5XTEru_GBFBcbSU88b1$$bh9ZdPa-P0eL1DVMH3Hcy"
+  } ],
+  "component" : "Model"
+}

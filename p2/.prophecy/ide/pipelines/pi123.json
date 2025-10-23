@@ -89,8 +89,172 @@
         } ],
         "isCustomOutputSchema" : false
       }
+    },
+    "J-IN55xLUhQ6EmEg0a6WP$$rJk0dNkH0iy3KPD9V72n-" : {
+      "id" : "J-IN55xLUhQ6EmEg0a6WP$$rJk0dNkH0iy3KPD9V72n-",
+      "component" : "FuzzyMatch",
+      "metadata" : {
+        "label" : "fuzzy_match_accounts",
+        "x" : -340,
+        "y" : -320,
+        "phase" : 0
+      },
+      "properties" : {
+        "relation_name" : [ "seed2" ],
+        "includeSimilarityScore" : true,
+        "_oldMacroProperties" : {
+          "macroName" : "FuzzyMatch",
+          "projectName" : "DatabricksSqlBasics",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['seed2']"
+          }, {
+            "name" : "mode",
+            "value" : "PURGE"
+          }, {
+            "name" : "sourceIdCol",
+            "value" : ""
+          }, {
+            "name" : "recordIdCol",
+            "value" : "Record_ID"
+          }, {
+            "name" : "matchThresholdPercentage",
+            "value" : "80"
+          }, {
+            "name" : "includeSimilarityScore",
+            "value" : "true"
+          } ]
+        },
+        "matchFields" : [ {
+          "kind" : "AddMatchField",
+          "AddMatchField" : {
+            "columnName" : "Name",
+            "matchFunction" : "custom"
+          }
+        } ],
+        "sourceIdCol" : "",
+        "matchThresholdPercentage" : 80,
+        "activeTab" : "match_fields",
+        "recordIdCol" : "Record_ID",
+        "mode" : "PURGE"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "lI5XTEru_GBFBcbSU88b1$$bh9ZdPa-P0eL1DVMH3Hcy",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "Record_ID",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "Name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "City",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "Ey_R96XftQ2pJ-D7UW8tV$$jwt4ji-aXezXvKewEomgx",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "record_id1",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "record_id2",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "similarity_score",
+              "dataType" : {
+                "type" : "Double"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "componentInfo" : {
+        "gemId" : "FuzzyMatch_DatabricksSqlBasics",
+        "name" : "FuzzyMatch",
+        "projectName" : "DatabricksSqlBasics",
+        "sourceProjectName" : "DatabricksSqlBasics",
+        "sourceProjectVersion" : "0.0.12"
+      }
+    },
+    "Rnf6Y6OSrYSkGG8zrrY-J" : {
+      "id" : "Rnf6Y6OSrYSkGG8zrrY-J",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "seed2",
+        "x" : -580,
+        "y" : -320,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "seed2",
+          "sourceType" : "Seed",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "X0eYAh9mBpvW3KrBQY5Zj",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "13KWTl02NVtXNZW57_hm3",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "Record_ID",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "Name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "City",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
     }
   },
-  "connections" : [ ],
+  "connections" : [ {
+    "id" : "WdrlAQqYYM4weAm4z24iQ$$ttSUHAbJ1ZcqHK04s_g2S",
+    "source" : "Rnf6Y6OSrYSkGG8zrrY-J",
+    "sourcePort" : "13KWTl02NVtXNZW57_hm3",
+    "target" : "J-IN55xLUhQ6EmEg0a6WP$$rJk0dNkH0iy3KPD9V72n-",
+    "targetPort" : "lI5XTEru_GBFBcbSU88b1$$bh9ZdPa-P0eL1DVMH3Hcy"
+  } ],
   "component" : "Pipeline"
 }

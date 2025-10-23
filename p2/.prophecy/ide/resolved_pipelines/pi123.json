@@ -89,8 +89,92 @@
         } ],
         "isCustomOutputSchema" : false
       }
+    },
+    "Rnf6Y6OSrYSkGG8zrrY-J" : {
+      "id" : "Rnf6Y6OSrYSkGG8zrrY-J",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "seed2",
+        "x" : -580,
+        "y" : -320,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "seed2",
+          "sourceType" : "Seed",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "X0eYAh9mBpvW3KrBQY5Zj",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "13KWTl02NVtXNZW57_hm3",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "Record_ID",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "Name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "City",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "J-IN55xLUhQ6EmEg0a6WP$$rJk0dNkH0iy3KPD9V72n-" : {
+      "id" : "J-IN55xLUhQ6EmEg0a6WP$$rJk0dNkH0iy3KPD9V72n-",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "pi123__fuzzy_match_accounts",
+        "phase" : 0
+      },
+      "properties" : {
+        "modelName" : "pi123__fuzzy_match_accounts"
+      },
+      "visualMetaInfo" : {
+        "visualProcessIds" : [ "fuzzy_match_accounts_Ey_R96XftQ2pJ-D7UW8tV$$jwt4ji-aXezXvKewEomgx", "J-IN55xLUhQ6EmEg0a6WP$$rJk0dNkH0iy3KPD9V72n-", "Rnf6Y6OSrYSkGG8zrrY-J" ],
+        "type" : "ephemeral",
+        "isTemporaryTable" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "pi123__fuzzy_match_accounts_in_0",
+          "slug" : "in_0"
+        } ],
+        "outputs" : [ {
+          "id" : "pi123__fuzzy_match_accounts_out_0",
+          "slug" : "out_0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
     }
   },
-  "connections" : [ ],
+  "connections" : [ {
+    "id" : "WdrlAQqYYM4weAm4z24iQ$$ttSUHAbJ1ZcqHK04s_g2S",
+    "source" : "Rnf6Y6OSrYSkGG8zrrY-J",
+    "sourcePort" : "13KWTl02NVtXNZW57_hm3",
+    "target" : "J-IN55xLUhQ6EmEg0a6WP$$rJk0dNkH0iy3KPD9V72n-",
+    "targetPort" : "pi123__fuzzy_match_accounts_in_0"
+  } ],
   "component" : "Pipeline"
 }

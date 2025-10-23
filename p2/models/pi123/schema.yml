@@ -1,0 +1,6 @@
+---
+version: 2
+models:
+- name: "pi123__fuzzy_match_accounts"
+  tags:
+  - "prophecy_temp"

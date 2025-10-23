@@ -85,7 +85,27 @@ sqlMacros:
     - macros/prophecy_tmp_source.sql
     - .prophecy/ide/macros/prophecy_tmp_source.json
     createdAt: '2025-10-23 12:49:02'
-sqlSeeds: {}
+sqlSeeds:
+  .prophecy/metadata/sqlseeds/seed2:
+    name: seed2
+    schema:
+      entityType: ''
+      providerType: Databricks
+      fields:
+      - name: Record_ID
+        dataType:
+          type: Integer
+      - name: Name
+        dataType:
+          type: String
+      - name: City
+        dataType:
+          type: String
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - seeds/seed2.csv
+    createdAt: '2025-10-23 13:11:58'
 sqlSources: {}
 sqlUnreferencedSources: {}
 sqlPipeline:
@@ -114,6 +134,8 @@ sqlOrchestratorPipelines:
     description: null
     author: abhisheks+e2etests@prophecy.io
     files:
+    - models/pi123/schema.yml
+    - models/pi123/pi123__fuzzy_match_accounts.sql
     - .prophecy/ide/pipelines/pi123.json
     - pipelines/pi123.py
     createdAt: '2025-10-23 12:49:02'
