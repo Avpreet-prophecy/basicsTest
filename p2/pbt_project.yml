@@ -1,6 +1,6 @@
 name: parent_model_whitelisted
 description: ''
-version: 0.1.0
+version: 0.1.1
 author: abhisheks+e2etests@prophecy.io
 language: sql
 buildSystem: ''
