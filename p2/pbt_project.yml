@@ -134,8 +134,8 @@ sqlOrchestratorPipelines:
     description: null
     author: abhisheks+e2etests@prophecy.io
     files:
-    - models/pi123/schema.yml
     - models/pi123/pi123__fuzzy_match_accounts.sql
+    - models/pi123/schema.yml
     - .prophecy/ide/pipelines/pi123.json
     - pipelines/pi123.py
     createdAt: '2025-10-23 12:49:02'
