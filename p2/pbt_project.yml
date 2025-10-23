@@ -38,7 +38,7 @@ sqlModels:
           type: String
       - name: Balance
         dataType:
-          type: Float
+          type: Decimal
       - name: Beneficiaries
         dataType:
           type: String
@@ -76,6 +76,15 @@ sqlMacros:
     - macros/generate_schema_name.sql
     - .prophecy/ide/macros/generate_schema_name.json
     createdAt: '2025-10-21 11:07:16'
+  .prophecy/metadata/sqlmacros/prophecy_tmp_source:
+    name: prophecy_tmp_source
+    macroType: expression
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - macros/prophecy_tmp_source.sql
+    - .prophecy/ide/macros/prophecy_tmp_source.json
+    createdAt: '2025-10-23 12:49:02'
 sqlSeeds: {}
 sqlSources: {}
 sqlUnreferencedSources: {}
@@ -98,3 +107,14 @@ flags:
   shouldAddDefaultDependenciesIfAbsent: false
 pipelineConfigurations: {}
 projectConfigurations: {}
+sqlOrchestratorPipelines:
+  .prophecy/metadata/sqlorchestratorpipeline/pi123:
+    name: pi123
+    schema: null
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - .prophecy/ide/pipelines/pi123.json
+    - pipelines/pi123.py
+    createdAt: '2025-10-23 12:49:02'
+sqlBusinessApps: {}

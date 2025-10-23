@@ -1,0 +1,96 @@
+{
+  "id" : "pi123",
+  "metainfo" : {
+    "label" : "pi123",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "schedule" : {
+      "cron" : "* 0 2 * * * *",
+      "timeZone" : "GMT",
+      "emailOnSuccess" : false,
+      "emailOnFailure" : false,
+      "emailOnStart" : false,
+      "emails" : [ "email@gmail.com" ],
+      "enabled" : false
+    },
+    "sensorSchedule" : {
+      "enabled" : false,
+      "isDefaultView" : false,
+      "triggers" : { }
+    },
+    "isTranspiledPipeline" : false
+  },
+  "processes" : {
+    "qqtlZ6jwfUtoI2Y6xzlGC$$NE797deSOvMDiLsWe4W0w" : {
+      "id" : "qqtlZ6jwfUtoI2Y6xzlGC$$NE797deSOvMDiLsWe4W0w",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "m1_0",
+        "x" : -320,
+        "y" : -80
+      },
+      "properties" : {
+        "modelName" : "m1"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "PLlS47ER03dnnHf4_SkaP$$Asdln0fB7qePRNXVbBZrD",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "RsIIALv5r5b0baHimFWdn$$TKnAc7vT-yxSnMfrIucMk",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "Account_Number",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "Account_Type",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "Balance",
+              "dataType" : {
+                "type" : "Decimal"
+              }
+            }, {
+              "name" : "Beneficiaries",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "root_1_generated",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "root_2_generated",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "root_3_generated",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ ],
+  "component" : "Pipeline"
+}
